@@ -20,11 +20,14 @@ tipografías del sistema.
 
 ## Cómo se publica
 
-El repositorio está conectado al Plesk de `alojamiento.cositt.com`, que despliega
-la rama `main` automáticamente en el directorio público de perat.es
-(`httpdocs/public`).
+El repositorio está conectado al Plesk de `alojamiento.cositt.com` mediante un
+webhook. Cada push a `main` avisa a Plesk, que hace pull y despliega en el
+directorio público de perat.es (`httpdocs/public`).
 
-Publicar un cambio = hacer push a `main`.
+Publicar un cambio = hacer push a `main`. No hay que subir nada a mano.
+
+Si alguna vez no se despliega, en GitHub → Settings → Webhooks → Entregas
+recientes se ve si el aviso llegó al servidor.
 
 ## Cómo editarlo
 
