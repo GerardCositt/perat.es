@@ -13,14 +13,15 @@
 <link rel="icon" type="image/png" sizes="32x32" href="assets/icono-cositt-32.png">
 <link rel="icon" type="image/png" sizes="512x512" href="assets/icono-cositt-512.png">
 <link rel="apple-touch-icon" href="assets/icono-cositt-180.png">
-<meta name="theme-color" content="#C52439">
-<style>html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}</style>
-</head>
-<body>
-<title>Gerard Perat</title>
+<meta name="theme-color" content="#C52439" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141011" media="(prefers-color-scheme: dark)">
+<title>Gerard Perat — Dossier de ponente</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<style>html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}</style>
+</head>
+<body>
 <style>
   :root {
     color-scheme: light;
@@ -85,6 +86,8 @@
 
   * { box-sizing: border-box; }
 
+  html { scroll-behavior: smooth; }
+
   body {
     margin: 0;
     background: var(--bg);
@@ -139,7 +142,7 @@
     padding-block: 18px;
   }
 
-  .masthead img { width: 148px; height: auto; display: block; }
+  .masthead .logo { width: 148px; height: auto; }
 
   .masthead__tag {
     font-family: var(--f-display);
@@ -148,6 +151,134 @@
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--muted);
+  }
+
+  /* logo: versión original sobre claro, versión blanca sobre oscuro */
+  .logo--light { display: block; }
+  .logo--dark { display: none; }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .logo--light { display: none; }
+    :root:not([data-theme="light"]) .logo--dark { display: block; }
+  }
+
+  :root[data-theme="dark"] .logo--light { display: none; }
+  :root[data-theme="dark"] .logo--dark { display: block; }
+
+  /* ---------- navegación interna ---------- */
+
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+  }
+
+  @supports (backdrop-filter: blur(10px)) {
+    .nav {
+      background: color-mix(in srgb, var(--bg) 82%, transparent);
+      backdrop-filter: saturate(160%) blur(10px);
+    }
+  }
+
+  .nav__inner {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+  }
+
+  .nav__links {
+    display: flex;
+    gap: 2px;
+    align-items: center;
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scroll-snap-type: x proximity;
+    overscroll-behavior-x: contain;
+  }
+
+  .nav__links::-webkit-scrollbar { display: none; }
+
+  /* en pantallas estrechas el menú se desliza: se insinúa con un degradado */
+  @media (max-width: 900px) {
+    .nav__links {
+      -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent);
+      mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent);
+    }
+  }
+
+  .nav a {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    position: relative;
+    font-family: var(--f-display);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    color: var(--muted);
+    padding: 0.95rem 0.7rem;
+    white-space: nowrap;
+    transition: color .15s;
+  }
+
+  .nav a::after {
+    content: "";
+    position: absolute;
+    left: 0.7rem;
+    right: 0.7rem;
+    bottom: -1px;
+    height: 2px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .18s ease;
+  }
+
+  .nav a:hover,
+  .nav a:focus-visible { color: var(--ink); }
+
+  .nav a.is-active { color: var(--ink); }
+  .nav a.is-active::after { transform: scaleX(1); }
+
+  .nav a.nav__cta {
+    flex: 0 0 auto;
+    align-self: center;
+    font-family: var(--f-display);
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-decoration: none;
+    color: var(--on-accent);
+    background: var(--accent);
+    padding: 0.45rem 0.95rem;
+    border-radius: 999px;
+    white-space: nowrap;
+    transition: opacity .15s;
+  }
+  .nav a.nav__cta::after { content: none; }
+  .nav a.nav__cta:hover,
+  .nav a.nav__cta:focus-visible { opacity: 0.88; color: var(--on-accent); }
+
+  /* el ancla no debe quedar tapada por la barra fija */
+  main section[id] { scroll-margin-top: 3.6rem; }
+
+  .skip {
+    position: absolute;
+    left: -9999px;
+  }
+  .skip:focus {
+    left: 1rem;
+    top: 1rem;
+    z-index: 100;
+    background: var(--accent);
+    color: var(--on-accent);
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
   }
 
   /* ---------- hero ---------- */
@@ -572,7 +703,7 @@
     font-size: 0.82rem;
     color: var(--muted);
   }
-  footer img { width: 112px; height: auto; display: block; opacity: 0.95; }
+  footer .logo { width: 112px; height: auto; opacity: 0.95; }
 
   @media (max-width: 860px) {
     .hero__grid { grid-template-columns: 1fr; }
@@ -585,14 +716,33 @@
   }
 </style>
 
+<a class="skip" href="#temas">Ir al contenido</a>
+
 <header class="masthead">
   <div class="wrap masthead__inner">
-    <img src="assets/logo-cositt.png" alt="Cositt Technology®">
+    <a href="#top" aria-label="Gerard Perat — inicio">
+      <img class="logo logo--light" src="assets/logo-cositt.png" alt="Cositt Technology®">
+      <img class="logo logo--dark" src="assets/logo-cositt-blanco.png" alt="Cositt Technology®">
+    </a>
     <span class="masthead__tag">Dossier de ponente</span>
   </div>
 </header>
 
-<main>
+<nav class="nav" aria-label="Secciones del dossier">
+  <div class="wrap nav__inner">
+    <div class="nav__links">
+      <a href="#temas">Temas de ponencia</a>
+      <a href="#trayectoria">Trayectoria</a>
+      <a href="#credenciales">Credenciales</a>
+      <a href="#historial">Dónde he estado</a>
+      <a href="#porque">¿Por qué yo?</a>
+      <a href="#practico">Datos prácticos</a>
+    </div>
+    <a class="nav__cta" href="#contacto">Hablemos</a>
+  </div>
+</nav>
+
+<main id="top">
   <div class="wrap">
 
     <section class="hero">
@@ -618,7 +768,7 @@
       </div>
     </section>
 
-    <section>
+    <section id="temas">
       <div class="sec-head">
         <p class="eyebrow">Sobre qué habla</p>
         <h2>Temas de ponencia</h2>
@@ -671,7 +821,7 @@
       </div>
     </section>
 
-    <section>
+    <section id="trayectoria">
       <div class="sec-head">
         <p class="eyebrow">Recorrido</p>
         <h2>Trayectoria</h2>
@@ -725,7 +875,7 @@
       </div>
     </section>
 
-    <section>
+    <section id="credenciales">
       <div class="sec-head">
         <p class="eyebrow">Con qué respalda lo que cuenta</p>
         <h2>Credenciales</h2>
@@ -780,7 +930,7 @@
       </aside>
     </section>
 
-    <section>
+    <section id="historial">
       <div class="sec-head">
         <p class="eyebrow">Dónde ha hablado</p>
         <h2>Ponencias, formación y medios</h2>
@@ -887,7 +1037,7 @@
       </div>
     </section>
 
-    <section>
+    <section id="practico">
       <div class="sec-head">
         <p class="eyebrow">Para quien organiza</p>
         <h2>Datos prácticos</h2>
@@ -925,7 +1075,7 @@
       </div>
     </section>
 
-    <section>
+    <section id="porque">
       <div class="sec-head">
         <p class="eyebrow">Antes de que sigas buscando</p>
         <h2>¿Por qué yo?</h2>
@@ -940,7 +1090,7 @@
       </div>
     </section>
 
-    <section>
+    <section id="contacto">
       <div class="sec-head">
         <p class="eyebrow">Contacto</p>
         <h2>Hablemos</h2>
@@ -987,12 +1137,59 @@
 
 <footer>
   <div class="wrap foot-inner">
-    <img src="assets/logo-cositt.png" alt="Cositt Technology®">
+    <div>
+      <img class="logo logo--light" src="assets/logo-cositt.png" alt="Cositt Technology®">
+      <img class="logo logo--dark" src="assets/logo-cositt-blanco.png" alt="Cositt Technology®">
+    </div>
     <span>Cositt Technology® · Málaga, España</span>
   </div>
 </footer>
 
 <script>
+  /* marca en el menú la sección que se está leyendo */
+  (function () {
+    var links = [].slice.call(document.querySelectorAll('.nav a[href^="#"]'));
+    var map = {};
+    var sections = [];
+    links.forEach(function (a) {
+      var el = document.getElementById(a.getAttribute('href').slice(1));
+      if (el) { map[el.id] = a; sections.push(el); }
+    });
+    if (!sections.length || !('IntersectionObserver' in window)) return;
+
+    var visible = {};
+    var bar = document.querySelector('.nav');
+
+    function paint() {
+      var best = null;
+      sections.forEach(function (el) {
+        if (visible[el.id] && (best === null || el.getBoundingClientRect().top < best.getBoundingClientRect().top)) {
+          best = el;
+        }
+      });
+      links.forEach(function (a) { a.classList.remove('is-active'); });
+      if (best && map[best.id]) {
+        var a = map[best.id];
+        a.classList.add('is-active');
+        /* en móvil, arrastra el menú horizontal hasta el enlace activo */
+        if (bar) {
+          var inner = bar.querySelector('.nav__links');
+          if (inner && inner.contains(a) && inner.scrollWidth > inner.clientWidth) {
+            var target = a.offsetLeft - (inner.clientWidth - a.offsetWidth) / 2;
+            inner.scrollTo({ left: Math.max(0, target), behavior: 'smooth' });
+          }
+        }
+      }
+    }
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { visible[e.target.id] = e.isIntersecting; });
+      paint();
+    }, { rootMargin: '-25% 0px -60% 0px', threshold: 0 });
+
+    sections.forEach(function (el) { io.observe(el); });
+  })();
+
   (function () {
     var btn = document.getElementById('copyBio');
     var bio = document.getElementById('bio');
