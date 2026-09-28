@@ -1,0 +1,927 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Dossier de ponente de Gerard Perat, fundador y CEO de Cositt Technology®.">
+<meta property="og:title" content="Gerard Perat — Dossier de ponente">
+<meta property="og:description" content="Consultor en madurez digital, procesos y nuevas tecnologías. Temas de ponencia, trayectoria y datos prácticos.">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://perat.es/">
+<meta property="og:image" content="https://perat.es/assets/retrato-gerard-perat.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/logo-cositt.png">
+<style>html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>Gerard Perat</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #FAF7F7;
+    --surface: #FFFFFF;
+    --surface-2: #F3EDEE;
+    --ink: #1B1416;
+    --ink-soft: #453A3C;
+    --muted: #6E6063;
+    --line: #E5DADB;
+    --line-strong: #CDBEC0;
+    --accent: #C52439;
+    --accent-ink: #C52439;
+    --accent-soft: rgba(197, 36, 57, 0.08);
+    --on-accent: #FFFFFF;
+
+    --f-display: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+    --f-body: "Nunito", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+
+    --wrap: 74rem;
+    --step-0: 1rem;
+    --step-1: 1.1875rem;
+    --step-2: 1.4375rem;
+    --step-3: 1.875rem;
+    --step-4: 2.5rem;
+    --step-5: clamp(2.6rem, 7.5vw, 4.5rem);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --bg: #141011;
+      --surface: #1D1819;
+      --surface-2: #241E1F;
+      --ink: #F2EBEC;
+      --ink-soft: #D6CACC;
+      --muted: #A09295;
+      --line: #2F2729;
+      --line-strong: #453A3C;
+      --accent: #C52439;
+      --accent-ink: #EF6376;
+      --accent-soft: rgba(239, 99, 118, 0.12);
+      --on-accent: #FFFFFF;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #141011;
+    --surface: #1D1819;
+    --surface-2: #241E1F;
+    --ink: #F2EBEC;
+    --ink-soft: #D6CACC;
+    --muted: #A09295;
+    --line: #2F2729;
+    --line-strong: #453A3C;
+    --accent: #C52439;
+    --accent-ink: #EF6376;
+    --accent-soft: rgba(239, 99, 118, 0.12);
+    --on-accent: #FFFFFF;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--f-body);
+    font-size: var(--step-0);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: var(--wrap);
+    margin-inline: auto;
+    padding-inline: 20px;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--f-display);
+    color: var(--ink);
+    text-wrap: balance;
+    margin: 0;
+    line-height: 1.12;
+    letter-spacing: -0.015em;
+  }
+
+  p { margin: 0; }
+  a { color: var(--accent-ink); }
+
+  .eyebrow {
+    font-family: var(--f-display);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0;
+  }
+
+  /* ---------- masthead ---------- */
+
+  .masthead {
+    border-bottom: 1px solid var(--line);
+    background: var(--surface);
+  }
+
+  .masthead__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding-block: 18px;
+  }
+
+  .masthead img { width: 148px; height: auto; display: block; }
+
+  .masthead__tag {
+    font-family: var(--f-display);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* ---------- hero ---------- */
+
+  .hero { padding-block: clamp(2.75rem, 7vw, 5.5rem) clamp(2.25rem, 5vw, 4rem); }
+
+  .hero__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+    gap: clamp(2rem, 5vw, 4.5rem);
+    align-items: start;
+  }
+
+  .hero h1 {
+    font-size: var(--step-5);
+    font-weight: 800;
+    margin-block: 0.5rem 0;
+  }
+
+  .hero__rule {
+    width: 68px;
+    height: 5px;
+    background: var(--accent);
+    margin-block: 1.5rem 1.4rem;
+  }
+
+  .hero__lead {
+    font-size: var(--step-2);
+    line-height: 1.5;
+    color: var(--ink-soft);
+    max-width: 34ch;
+  }
+
+  .hero__body {
+    margin-top: 1.4rem;
+    max-width: 58ch;
+    color: var(--ink-soft);
+  }
+
+  .hero__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 2rem;
+  }
+
+  .chip {
+    font-family: var(--f-display);
+    font-size: 0.76rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    padding: 0.42rem 0.8rem;
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    color: var(--ink-soft);
+    background: var(--surface);
+  }
+
+  .portrait {
+    aspect-ratio: 4 / 5;
+    max-width: 100%;
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    display: grid;
+    place-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* ---------- sections ---------- */
+
+  section { padding-block: clamp(2.5rem, 5.5vw, 4.25rem); }
+  section + section { border-top: 1px solid var(--line); }
+
+  .sec-head { margin-bottom: 2.25rem; }
+  .sec-head h2 {
+    font-size: var(--step-4);
+    font-weight: 700;
+    margin-top: 0.55rem;
+  }
+  .sec-head p.sub {
+    margin-top: 0.9rem;
+    color: var(--muted);
+    max-width: 62ch;
+  }
+
+  /* ---------- talks ---------- */
+
+  .talks {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+
+  .talk {
+    background: var(--surface);
+    padding: 1.7rem 1.5rem 1.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .talk h3 { font-size: var(--step-1); font-weight: 700; }
+  .talk p { color: var(--ink-soft); font-size: 0.95rem; }
+  .talk__for {
+    margin-top: auto;
+    padding-top: 0.9rem;
+    font-family: var(--f-display);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+  }
+
+  /* ---------- timeline ---------- */
+
+  .relato { max-width: 60ch; margin-bottom: 2.75rem; }
+  .relato p { color: var(--ink-soft); margin-bottom: 1rem; }
+  .relato p:last-child { margin-bottom: 0; }
+  .relato p.abre {
+    font-family: var(--f-display);
+    font-size: 1.28rem;
+    font-weight: 600;
+    line-height: 1.45;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin-bottom: 1.4rem;
+  }
+  .relato strong { color: var(--ink); font-weight: 600; }
+
+  .timeline { display: grid; gap: 0; }
+
+  .tl-item {
+    display: grid;
+    grid-template-columns: 7.5rem 1fr;
+    gap: clamp(1rem, 3vw, 2.5rem);
+    padding-block: 1.4rem;
+    border-top: 1px solid var(--line);
+  }
+  .tl-item:last-child { border-bottom: 1px solid var(--line); }
+
+  .tl-year {
+    font-family: var(--f-display);
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--accent-ink);
+    font-variant-numeric: tabular-nums;
+    padding-top: 0.15rem;
+  }
+
+  .tl-body h3 { font-size: var(--step-1); font-weight: 700; margin-bottom: 0.4rem; }
+  .tl-body p { color: var(--ink-soft); max-width: 62ch; }
+
+  /* ---------- credentials ---------- */
+
+  .creds {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 1.75rem 2.25rem;
+  }
+
+  .cred h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    padding-bottom: 0.6rem;
+    border-bottom: 2px solid var(--accent);
+    display: inline-block;
+    margin-bottom: 0.85rem;
+  }
+  .cred ul { margin: 0; padding-left: 1.1rem; color: var(--ink-soft); }
+  .cred li { margin-bottom: 0.4rem; }
+
+  /* ---------- media ---------- */
+
+  .pull {
+    margin: 1.6rem 0 0;
+    padding-left: 1.15rem;
+    border-left: 3px solid var(--accent);
+    font-family: var(--f-display);
+    font-size: 1.15rem;
+    font-weight: 600;
+    line-height: 1.45;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    max-width: 44ch;
+  }
+
+  .stage {
+    margin: 0 0 2.25rem;
+    border: 1px solid var(--line);
+    background: var(--surface);
+  }
+  .stage img { display: block; width: 100%; height: auto; }
+  .stage figcaption {
+    padding: 0.85rem 1.1rem;
+    font-size: 0.86rem;
+    color: var(--muted);
+    border-top: 1px solid var(--line);
+  }
+  .stage figcaption strong { color: var(--ink); font-weight: 600; }
+
+  .stage-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+  .shot { margin: 0; border: 1px solid var(--line); background: var(--surface); }
+  .shot img { display: block; width: 100%; height: auto; }
+  .shot figcaption {
+    padding: 0.6rem 0.75rem;
+    font-size: 0.78rem;
+    line-height: 1.4;
+    color: var(--muted);
+    border-top: 1px solid var(--line);
+  }
+  .shot figcaption b { display: block; color: var(--ink); font-weight: 600; font-family: var(--f-display); font-size: 0.76rem; margin-bottom: 0.15rem; }
+
+  .media-list { display: grid; gap: 0; }
+  .media-group {
+    font-family: var(--f-display);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    padding-block: 1.6rem 0.2rem;
+  }
+  .media-group:first-child { padding-top: 0; }
+  .media-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5rem 1.25rem;
+    padding-block: 1.1rem;
+    border-top: 1px solid var(--line);
+  }
+  .media-item:last-child { border-bottom: 1px solid var(--line); }
+  .media-item__where {
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    min-width: 9rem;
+  }
+  .media-item__what { flex: 1 1 18rem; color: var(--ink-soft); }
+  .media-item__what em { color: var(--ink); font-style: italic; }
+
+  /* ---------- organizer block ---------- */
+
+  .org {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    gap: 1.5rem;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    padding: 1.6rem 1.5rem;
+  }
+
+  .card h3 {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1rem;
+  }
+
+  .kv { display: grid; gap: 0.7rem; }
+  .kv div { display: flex; justify-content: space-between; gap: 1rem; border-bottom: 1px dotted var(--line-strong); padding-bottom: 0.55rem; }
+  .kv dt, .kv span:first-child { color: var(--muted); font-size: 0.9rem; }
+  .kv span:last-child { text-align: right; font-weight: 600; color: var(--ink); font-size: 0.92rem; }
+
+  .bio-text { color: var(--ink-soft); font-size: 0.95rem; }
+
+  .copy-btn {
+    margin-top: 1rem;
+    font-family: var(--f-display);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    padding: 0.6rem 1.1rem;
+    background: var(--accent);
+    color: var(--on-accent);
+    border: 1px solid var(--accent);
+    cursor: pointer;
+    border-radius: 2px;
+  }
+  .copy-btn:hover { filter: brightness(1.08); }
+  .copy-btn:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 3px; }
+
+  /* ---------- contact ---------- */
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    gap: 1.5rem 2.5rem;
+  }
+
+  .contact-grid h3 {
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+  }
+
+  .selectable {
+    font-family: var(--f-display);
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--ink);
+    user-select: all;
+    display: block;
+    margin-bottom: 0.35rem;
+    word-break: break-word;
+  }
+
+  .links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .links a {
+    font-family: var(--f-display);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    color: var(--ink-soft);
+    border: 1px solid var(--line-strong);
+    padding: 0.4rem 0.75rem;
+    border-radius: 999px;
+  }
+  .links a:hover { border-color: var(--accent); color: var(--accent-ink); }
+
+  footer {
+    border-top: 1px solid var(--line);
+    background: var(--surface);
+    padding-block: 1.6rem;
+  }
+  .foot-inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+  footer img { width: 112px; height: auto; display: block; opacity: 0.95; }
+
+  @media (max-width: 860px) {
+    .hero__grid { grid-template-columns: 1fr; }
+    .portrait { max-width: 20rem; order: -1; }
+    .tl-item { grid-template-columns: 1fr; gap: 0.3rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+</style>
+
+<header class="masthead">
+  <div class="wrap masthead__inner">
+    <img src="assets/logo-cositt.png" alt="Cositt Technology®">
+    <span class="masthead__tag">Dossier de ponente</span>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <section class="hero">
+      <div class="hero__grid">
+        <div>
+          <p class="eyebrow">Málaga · España</p>
+          <h1>Gerard Perat</h1>
+          <div class="hero__rule"></div>
+          <p class="hero__lead">Soy consultor en madurez digital, procesos y nuevas tecnologías, y Compliance Officer. Fundador y CEO de Cositt Technology®.</p>
+          <p class="hero__body">Llevo más de una década ayudando a empresas a poner orden en cómo trabajan: primero desde el marketing y la internacionalización, después implantando sistemas de gestión, y ahora aplicando inteligencia artificial y automatización a procesos reales de negocio. Hablo de tecnología en lenguaje de empresa, no de informático.</p>
+          <div class="hero__meta">
+            <span class="chip">Consultor tecnológico</span>
+            <span class="chip">Compliance Officer</span>
+            <span class="chip">Partner oficial de Odoo</span>
+            <span class="chip">Partner de Microsoft</span>
+            <span class="chip">IA aplicada a negocio</span>
+            <span class="chip">Automatización de procesos</span>
+          </div>
+        </div>
+        <figure class="portrait" style="margin:0">
+          <img src="assets/retrato-gerard-perat.jpg" alt="Retrato de Gerard Perat">
+        </figure>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-head">
+        <p class="eyebrow">Sobre qué habla</p>
+        <h2>Temas de ponencia</h2>
+        <p class="sub">Cuatro charlas que he construido sobre trabajo real con empresas, no sobre tendencias. Las adapto en duración y profundidad al perfil de la sala: de 45 minutos a jornada completa.</p>
+        <blockquote class="pull">La IA no premia al más técnico. Premia al que hace mejores preguntas.</blockquote>
+      </div>
+
+      <div class="talks">
+        <article class="talk">
+          <h3>Inteligencia artificial sin equipo técnico</h3>
+          <p>Qué puede automatizar hoy una empresa pequeña sin contratar a nadie y sin presupuesto de desarrollo: atención al cliente, propuestas, contenidos, seguimiento comercial. Traigo ejemplos de lo que funciona y de lo que se abandona a los dos meses.</p>
+          <p class="talk__for">Emprendedores y pymes</p>
+        </article>
+
+        <article class="talk">
+          <h3>Del Excel al sistema de gestión</h3>
+          <p>Cómo digitalizo una empresa que funciona a base de hojas de cálculo y correos, sin parar la actividad ni tirar por la borda lo que ya funciona. Qué ordeno primero, qué automatizo después y en qué orden duele menos.</p>
+          <p class="talk__for">Empresa establecida</p>
+        </article>
+
+        <article class="talk">
+          <h3>Automatizar el trabajo que nadie quiere hacer</h3>
+          <p>Las tareas repetitivas que consumen las horas del equipo y no aportan nada: pasar datos de un sitio a otro, emitir documentos, avisar a gente. Cómo las identifico, cuánto cuestan de verdad y cómo las elimino.</p>
+          <p class="talk__for">Dirección y operaciones</p>
+        </article>
+
+        <article class="talk">
+          <h3>Madurez digital: en qué punto está tu empresa</h3>
+          <p>Mi marco para saber si el siguiente paso es tecnología o es proceso. La mayoría de proyectos digitales fracasan porque se compra software para arreglar algo que era un problema de organización.</p>
+          <p class="talk__for">Comités y asociaciones</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-head">
+        <p class="eyebrow">Recorrido</p>
+        <h2>Trayectoria</h2>
+      </div>
+
+      <div class="relato">
+        <p class="abre">Nunca me he propuesto coleccionar especialidades. Han ido apareciendo, y siempre por el mismo motivo: no entender cómo funciona algo me incomoda hasta que lo desmonto.</p>
+        <p>Lo primero fue vender fuera. Acompañé a empresas españolas en su salida al exterior y acabé negociando en Ghana, Senegal y Qatar. Allí aprendí algo que no se me ha ido desde entonces: un buen producto no salva a una compañía cuyo proceso interno hace aguas.</p>
+        <p>Esa constatación me empujó a mirar hacia dentro. Del marketing pasé a los sistemas de gestión, y de los sistemas de gestión a los procesos que hay debajo. Implantar un ERP enseña más sobre una empresa que cualquier auditoría: ves dónde se escapa el tiempo, dónde se duplica el trabajo y dónde alguien lleva años tapando un agujero con una hoja de cálculo.</p>
+        <p>Con los procesos ya ordenados, la siguiente pregunta era inevitable: <strong>¿qué parte de todo esto puede hacerse sola?</strong> De ahí vienen la automatización primero y la inteligencia artificial después. No como moda pasajera, sino como la primera herramienta capaz de encargarse de tareas que hasta ahora exigían criterio humano.</p>
+        <p>El cumplimiento normativo no fue un añadido, sino la consecuencia lógica de todo lo anterior. Cuando manejas los datos de una empresa entera, la responsabilidad deja de ser un asunto teórico. Me formé, y hoy soy también <strong>Compliance Officer</strong>: digitalizar sin proteger me parece sencillamente irresponsable.</p>
+        <p>Por el camino he construido producto propio —control horario, gestión de turnos, inteligencia artificial— porque hay preguntas que solo se responden fabricando la respuesta.</p>
+        <p>Todo lo que enseño lo he roto antes. Por eso doy formación: no divulgo lo que he leído, sino lo que me ha costado entender.</p>
+      </div>
+
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-year">Origen</div>
+          <div class="tl-body">
+            <h3>Formación técnica</h3>
+            <p>De ahí me viene una forma de trabajar muy pegada al proceso y al terreno: entiendo primero cómo funciona una operación y solo después decido qué herramienta hace falta.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-year">Internacional</div>
+          <div class="tl-body">
+            <h3>Marketing e internacionalización</h3>
+            <p>Asesoré a empresas españolas en su salida al exterior, con experiencia comercial directa en mercados de África y Oriente Medio, entre ellos Ghana, Senegal y Qatar.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-year">2014</div>
+          <div class="tl-body">
+            <h3>Primeras ponencias sobre negocio digital</h3>
+            <p>Empecé a hablar ante empresas y asociaciones empresariales, y a ayudarlas, en estrategia de venta en internet, presencia digital e internacionalización del pequeño comercio. Llevo una década hablando y ayudando.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-year">Hoy</div>
+          <div class="tl-body">
+            <h3>Fundador y CEO de Cositt Technology®</h3>
+            <p>Dirijo una consultora tecnológica con sede en Málaga, partner oficial de Odoo. Implantamos sistemas de gestión, desarrollamos módulos a medida e integraciones de cumplimiento fiscal, y automatizamos procesos para clientes de sanidad, industria, hostelería y servicios.</p>
+            <p style="margin-top:0.7rem">Soy también <strong>Compliance Officer</strong>, en cumplimiento normativo y protección de datos.</p>
+            <p style="margin-top:0.7rem">Me he especializado en aplicar <strong>inteligencia artificial</strong> a procesos de negocio: agentes y automatizaciones para clientes, formación a equipos de dirección y desarrollo de producto propio de IA.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-head">
+        <p class="eyebrow">Con qué respalda lo que cuenta</p>
+        <h2>Credenciales</h2>
+      </div>
+
+      <div class="creds">
+        <div class="cred">
+          <h3>Consultoría</h3>
+          <ul>
+            <li>Hago diagnósticos de <strong>madurez digital</strong> y hojas de ruta de digitalización</li>
+            <li><strong>Compliance Officer</strong> — Curso Superior de Compliance, Deusto Formación</li>
+            <li>Partner oficial de Odoo</li>
+            <li>Partner de Microsoft: Azure y Microsoft 365 para empresa</li>
+            <li>Implantación de ERP en empresa multicompañía y en red de franquicias</li>
+          </ul>
+        </div>
+
+        <div class="cred">
+          <h3>Producto propio</h3>
+          <ul>
+            <li><strong>BenotBe®</strong> — control horario y gestión de personal, en mercado con clientes reales</li>
+            <li><strong>Neurocarta</strong> — proyecto de inteligencia artificial con infraestructura propia</li>
+            <li><strong>Ticketmaton</strong> — gestión de turnos y colas para tienda física</li>
+          </ul>
+        </div>
+
+        <div class="cred">
+          <h3>Formación</h3>
+          <ul>
+            <li>Alrededor de <strong>50 empresas formadas</strong> en sus sistemas de gestión</li>
+            <li>Plataforma de formación propia: IA, nuevas tecnologías, automatización de procesos y Odoo</li>
+            <li>Sesiones de IA a medida y personalizadas para equipos de dirección</li>
+            <li>Me he formado en gestión de crisis de ciberseguridad con el Centro Criptológico Nacional (CCN)</li>
+          </ul>
+        </div>
+
+        <div class="cred">
+          <h3>Tecnología</h3>
+          <ul>
+            <li>Automatización de procesos con N8N y Cloudflare Workers</li>
+            <li>Desarrollo de módulos a medida sobre Odoo</li>
+            <li>Infraestructura cloud propia para clientes</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-head">
+        <p class="eyebrow">Dónde ha hablado</p>
+        <h2>Ponencias, formación y medios</h2>
+        <p class="sub">Ante asociaciones empresariales, equipos de dirección y grupos de trabajo. La mayor parte de mi recorrido es formación en empresa: no deja rastro público, pero es donde he aprendido a explicar tecnología a quien no es técnico.</p>
+      </div>
+
+      <figure class="stage">
+        <img src="assets/formacion-cordoba.jpg" alt="Gerard Perat impartiendo formación sobre Odoo en Córdoba">
+        <figcaption><strong>Formación presencial sobre Odoo a unas 30 personas</strong> — Córdoba, junio de 2025.</figcaption>
+      </figure>
+
+      <div class="stage-grid">
+        <figure class="shot">
+          <img src="assets/cordoba-sala.jpg" alt="Córdoba · La sala">
+          <figcaption><b>Córdoba · La sala</b>Unas 30 personas en la formación presencial.</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="assets/apymem-marbella.jpg" alt="APYMEM · Marbella">
+          <figcaption><b>APYMEM · Marbella</b>«Ciberseguridad esencial para pymes», julio de 2024.</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="assets/apymem-cartel.jpg" alt="APYMEM · Cartel">
+          <figcaption><b>APYMEM · Cartel</b>Desayuno networking de la asociación.</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="assets/linked-lunch-ceos.jpg" alt="Linked Lunch CEOs">
+          <figcaption><b>Linked Lunch CEOs</b>«IA en el trabajo diario», sesión online para directivos.</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="assets/erp-summit-madrid.jpg" alt="ERP Summit · Madrid">
+          <figcaption><b>ERP Summit · Madrid</b>Encuentro global de software de gestión.</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="assets/des-2024-malaga.jpg" alt="DES 2024 · Málaga">
+          <figcaption><b>DES 2024 · Málaga</b>Digital Enterprise Show.</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="assets/bni-chatgpt.jpg" alt="Curso de ChatGPT para miembros de BNI">
+          <figcaption><b>BNI · ChatGPT</b>Curso «Cómo usar el GPT de BNI», febrero de 2026.</figcaption>
+        </figure>
+      </div>
+
+      <div class="media-list">
+
+        <p class="media-group">Asociaciones y colectivos empresariales</p>
+        <div class="media-item">
+          <span class="media-item__where">APYMEM · Marbella</span>
+          <span class="media-item__what"><em>«Ciberseguridad esencial para pymes»</em> — desayuno networking de la Asociación de Pequeñas y Medianas Empresas de Marbella. Julio de 2024.</span>
+        </div>
+        <div class="media-item">
+          <span class="media-item__where">Linked Lunch CEOs</span>
+          <span class="media-item__what"><em>«IA en el trabajo diario: de dónde empezar a qué hacer primero, sin ser técnico»</em> — sesión online de Linked Business, exclusiva para socios de Linked Lunch CEOs. Abril de 2026.</span>
+        </div>
+        <div class="media-item">
+          <span class="media-item__where">BNI · Curso</span>
+          <span class="media-item__what"><em>«Cómo usar el GPT de BNI para generar más negocio»</em> — curso práctico de ChatGPT aplicado al día a día comercial, para miembros de la red. Febrero de 2026.</span>
+        </div>
+        <div class="media-item">
+          <span class="media-item__where">BNI</span>
+          <span class="media-item__what">Presento con regularidad ante grupos de empresarios dentro de la red de networking BNI.</span>
+        </div>
+
+        <div class="media-item">
+          <span class="media-item__where">Sesión online</span>
+          <span class="media-item__what">Di una charla sobre ciberseguridad ante un grupo de empresarios, en pleno confinamiento y con las plantillas recién enviadas a teletrabajar. Abril de 2020.</span>
+        </div>
+
+        <p class="media-group">Organizaciones sociales</p>
+        <div class="media-item">
+          <span class="media-item__where">Cruz Roja</span>
+          <span class="media-item__what">Impartí una ponencia dentro del Plan de Empleo de Cruz Roja, dirigida a personas en proceso de inserción laboral. 2021.</span>
+        </div>
+
+        <p class="media-group">Formación en empresa</p>
+        <div class="media-item">
+          <span class="media-item__where">Córdoba</span>
+          <span class="media-item__what">Formé a un grupo de <strong>unas 30 personas</strong> en el funcionamiento de Odoo, presencialmente y en las instalaciones del cliente. Junio de 2025.</span>
+        </div>
+        <div class="media-item">
+          <span class="media-item__where">Medio centenar</span>
+          <span class="media-item__what">He formado a <strong>alrededor de 50 empresas</strong> en el uso de sus propios sistemas de gestión, con sus equipos y sobre sus procesos reales.</span>
+        </div>
+        <div class="media-item">
+          <span class="media-item__where">A medida</span>
+          <span class="media-item__what">Imparto sesiones de inteligencia artificial <strong>a medida y personalizadas</strong> para equipos de dirección, trabajando sobre los casos reales de cada empresa.</span>
+        </div>
+
+        <p class="media-group">Formación propia</p>
+        <div class="media-item">
+          <span class="media-item__where">COSITT academy</span>
+          <span class="media-item__what">Mi plataforma de formación propia. Inteligencia artificial, nuevas tecnologías, automatización de procesos y Odoo — no solo ERP: Odoo es una parte del catálogo, no el catálogo entero.</span>
+        </div>
+
+        <p class="media-group">Medios</p>
+        <div class="media-item">
+          <span class="media-item__where">101tv Málaga</span>
+          <span class="media-item__what"><strong>Colaborador tecnológico del canal</strong> para la difusión de nuevas tecnologías. Intervengo divulgando inteligencia artificial y digitalización ante público empresarial.</span>
+        </div>
+        <div class="media-item">
+          <span class="media-item__where">101tv Málaga</span>
+          <span class="media-item__what">Una de esas intervenciones: <em>El Escaparate</em>, programa de actualidad económica y empresarial de la Costa del Sol. Diciembre de 2024.</span>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-head">
+        <p class="eyebrow">Para quien organiza</p>
+        <h2>Datos prácticos</h2>
+        <p class="sub">Todo lo que normalmente se pide por correo, ya resuelto.</p>
+      </div>
+
+      <div class="org">
+        <div class="card">
+          <h3>Formatos</h3>
+          <div class="kv">
+            <div><span>Ponencia</span><span>45 + 15 min</span></div>
+            <div><span>Charla corta</span><span>20–30 min</span></div>
+            <div><span>Taller práctico</span><span>Media jornada</span></div>
+            <div><span>Formación</span><span>1–2 días</span></div>
+            <div><span>Modalidad</span><span>Presencial o remoto</span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Requisitos de sala</h3>
+          <div class="kv">
+            <div><span>Proyección</span><span>HDMI o USB-C</span></div>
+            <div><span>Sonido</span><span>Micrófono de solapa</span></div>
+            <div><span>Conexión</span><span>Wifi estable</span></div>
+            <div><span>Demostraciones</span><span>En directo</span></div>
+          </div>
+          <p class="bio-text" style="margin-top:1rem">Hago demostraciones en vivo, así que necesito conexión a internet en sala.</p>
+        </div>
+
+        <div class="card">
+          <h3>Biografía breve</h3>
+          <p class="bio-text" id="bio">Soy Gerard Perat, fundador y CEO de Cositt Technology®, consultora tecnológica con sede en Málaga y partner oficial de Odoo. Como consultor en madurez digital, procesos y nuevas tecnologías, y como Compliance Officer, acompaño a empresas de sanidad, industria, hostelería y servicios en la implantación de sus sistemas de gestión y en la aplicación de inteligencia artificial y automatización a su trabajo diario. Antes trabajé en marketing e internacionalización de empresas en mercados de África y Oriente Medio.</p>
+          <button class="copy-btn" id="copyBio" type="button">Copiar biografía</button>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-head">
+        <p class="eyebrow">Contacto</p>
+        <h2>Hablemos</h2>
+      </div>
+
+      <div class="contact-grid">
+        <div>
+          <h3>Directo</h3>
+          <span class="selectable">gerard@cositt.com</span>
+          <span class="selectable">+34 630 619 901</span>
+        </div>
+        <div>
+          <h3>Oficina</h3>
+          <span class="selectable">info@cositt.com</span>
+          <span class="selectable">+34 952 385 708</span>
+        </div>
+        <div>
+          <h3>Dónde</h3>
+          <p class="bio-text">Centro de Negocios Guadalhorce<br>Calle Castelao 8<br>29004 Málaga, España</p>
+        </div>
+        <div>
+          <h3>Gerard Perat</h3>
+          <div class="links">
+            <a href="https://www.tiktok.com/@gerard_perat" target="_blank" rel="noopener">TikTok</a>
+            <a href="https://www.instagram.com/gerard_perat/" target="_blank" rel="noopener">Instagram</a>
+          </div>
+        </div>
+        <div>
+          <h3>Cositt Technology®</h3>
+          <div class="links">
+            <a href="https://cositt.com" target="_blank" rel="noopener">Web</a>
+            <a href="https://www.linkedin.com/company/cositt-technology/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://www.youtube.com/channel/UC5jGKkEbqAPoYbh8fZmemcA" target="_blank" rel="noopener">YouTube</a>
+            <a href="https://www.instagram.com/cosittprojects/" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://www.tiktok.com/@cositt_technology" target="_blank" rel="noopener">TikTok</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap foot-inner">
+    <img src="assets/logo-cositt.png" alt="Cositt Technology®">
+    <span>Cositt Technology® · Málaga, España</span>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var btn = document.getElementById('copyBio');
+    var bio = document.getElementById('bio');
+    if (!btn || !bio) return;
+    btn.addEventListener('click', function () {
+      var text = bio.textContent.trim();
+      var done = function (msg) {
+        var original = 'Copiar biografía';
+        btn.textContent = msg;
+        setTimeout(function () { btn.textContent = original; }, 2200);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () {
+          done('Copiada');
+        }).catch(function () {
+          selectBio();
+          done('Selecciónala y copia');
+        });
+      } else {
+        selectBio();
+        done('Selecciónala y copia');
+      }
+    });
+    function selectBio() {
+      try {
+        var range = document.createRange();
+        range.selectNodeContents(bio);
+        var sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range);
+      } catch (e) {}
+    }
+  })();
+</script>
+
+
+</body>
+</html>
