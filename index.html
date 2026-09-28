@@ -315,6 +315,12 @@
     font-weight: 600;
     color: var(--ink);
   }
+  .porque p.cierra a {
+    color: var(--accent-ink);
+    text-decoration: none;
+    border-bottom: 2px solid var(--accent);
+  }
+  .porque p.cierra a:hover { border-bottom-width: 3px; }
 
   .relato { max-width: 60ch; margin-bottom: 2.75rem; }
   .relato p { color: var(--ink-soft); margin-bottom: 1rem; }
@@ -525,6 +531,19 @@
     word-break: break-word;
   }
 
+  a.selectable {
+    user-select: text;
+    text-decoration: none;
+    border-bottom: 1px solid var(--line-strong);
+    display: inline-block;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  a.selectable:hover,
+  a.selectable:focus-visible {
+    color: var(--accent-ink);
+    border-color: var(--accent);
+  }
+
   .links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
   .links a {
     font-family: var(--f-display);
@@ -728,7 +747,7 @@
           <h3>Producto propio</h3>
           <ul>
             <li><strong>BenotBe®</strong> — control horario y gestión de personal, en mercado con clientes reales</li>
-            <li><strong>Neurocarta</strong> — proyecto de inteligencia artificial con infraestructura propia</li>
+            <li><strong>Neurocarta®</strong> — proyecto de inteligencia artificial con infraestructura propia</li>
             <li><strong>Ticketmaton</strong> — gestión de turnos y colas para tienda física</li>
           </ul>
         </div>
@@ -917,7 +936,7 @@
         <p>Yo no voy a contarte el futuro. Voy a contarte lo que pasa el lunes por la mañana, cuando alguien de tu equipo tiene que usar la herramienta y no le sale. Eso lo sé porque me ha pasado a mí y porque llevo años arreglándolo en empresas que se parecen mucho a la tuya.</p>
         <p>No llevo una presentación enlatada. Antes de cada charla pregunto a qué se dedica la gente que va a estar sentada en la sala y cambio los ejemplos. Si en tu sector el problema es el albarán, hablamos del albarán.</p>
         <p>Y me voy de ahí sin venderte nada. Si después quieres que sigamos hablando, ya sabes dónde encontrarme.</p>
-        <p class="cierra">¿Tienes una fecha en la cabeza? Escríbeme y en diez minutos sabemos si encajo.</p>
+        <p class="cierra">¿Tienes una fecha en la cabeza? <a href="mailto:gerard@cositt.com?subject=Consulta%20para%20una%20ponencia">Escríbeme</a> y en diez minutos sabemos si encajo.</p>
       </div>
     </section>
 
@@ -930,13 +949,13 @@
       <div class="contact-grid">
         <div>
           <h3>Directo</h3>
-          <span class="selectable">gerard@cositt.com</span>
-          <span class="selectable">+34 630 619 901</span>
+          <a class="selectable" href="mailto:gerard@cositt.com">gerard@cositt.com</a>
+          <a class="selectable" href="tel:+34630619901">+34 630 619 901</a>
         </div>
         <div>
           <h3>Oficina</h3>
-          <span class="selectable">info@cositt.com</span>
-          <span class="selectable">+34 952 385 708</span>
+          <a class="selectable" href="mailto:info@cositt.com">info@cositt.com</a>
+          <a class="selectable" href="tel:+34952385708">+34 952 385 708</a>
         </div>
         <div>
           <h3>Dónde</h3>
