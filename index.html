@@ -10,7 +10,10 @@
 <meta property="og:url" content="https://perat.es/">
 <meta property="og:image" content="https://perat.es/assets/retrato-gerard-perat.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="assets/logo-cositt.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/icono-cositt-32.png">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/icono-cositt-512.png">
+<link rel="apple-touch-icon" href="assets/icono-cositt-180.png">
+<meta name="theme-color" content="#C52439">
 <style>html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}</style>
 </head>
 <body>
@@ -206,18 +209,16 @@
   .portrait {
     aspect-ratio: 4 / 5;
     max-width: 100%;
-    background: var(--surface-2);
-    border: 1px solid var(--line);
     display: grid;
-    place-items: center;
+    place-items: end center;
     position: relative;
-    overflow: hidden;
   }
 
   .portrait img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: bottom;
     display: block;
   }
 
@@ -593,7 +594,7 @@
           </div>
         </div>
         <figure class="portrait" style="margin:0">
-          <img src="assets/retrato-gerard-perat.jpg" alt="Retrato de Gerard Perat">
+          <img src="assets/retrato-gerard-perat.webp" alt="Retrato de Gerard Perat">
         </figure>
       </div>
     </section>
